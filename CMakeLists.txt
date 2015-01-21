@@ -1,3 +1,21 @@
+IF(BIICODE)
+# Initializes block variables
+INIT_BIICODE_BLOCK()
+
+# Actually create targets: EXEcutables and libraries.
+ADD_BIICODE_TARGETS()
+
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules/")
+find_package(libusb-1.0 REQUIRED)
+TARGET_INCLUDE_DIRECTORIES(${BII_BLOCK_TARGET} INTERFACE ${LIBUSB_1_INCLUDE_DIRS})
+if(APPLE)
+    FIND_LIBRARY(GLUT_LIBRARY GLUT)
+    FIND_LIBRARY(OpenGL_LIBRARY OpenGL)
+    TARGET_LINK_LIBRARIES(${BII_BLOCK_TARGET} INTERFACE ${LIBUSB_1_LIBRARIES} ${GLUT_LIBRARY} ${OpenGL_LIBRARY})
+else()
+    TARGET_LINK_LIBRARIES(${BII_BLOCK_TARGET} INTERFACE ${LIBUSB_1_LIBRARIES} glut GL GLU)
+endif()
+ELSE()
 ######################################################################################
 # License
 ######################################################################################
@@ -30,14 +48,14 @@
 # CMake directives
 ######################################################################################
 
-cmake_minimum_required(VERSION 2.6)
+#cmake_minimum_required(VERSION 2.6)
 set(PYTHON_EXECUTABLE "python2")
 
 ######################################################################################
 # Project declaration and options
 ######################################################################################
 
-PROJECT(libfreenect)
+#PROJECT(libfreenect)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules/")
 
@@ -220,4 +238,4 @@ IF ( BUILD_CPACK_TGZ OR BUILD_CPACK_DEB OR BUILD_CPACK_RPM )
   INSTALL(FILES "README.md" DESTINATION "share/doc/${CPACK_PACKAGE_NAME}")
 
 ENDIF ( )
-
+ENDIF(BIICODE)
