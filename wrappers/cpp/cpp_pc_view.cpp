@@ -27,7 +27,7 @@
 #include <iostream>
 #include <vector>
 #include <pthread.h>
-#include <libfreenect.hpp>
+#include "libfreenect.hpp"
 
 #if defined(__APPLE__)
 #include <GLUT/glut.h>
