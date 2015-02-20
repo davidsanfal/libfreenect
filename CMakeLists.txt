@@ -48,14 +48,14 @@ ELSE()
 # CMake directives
 ######################################################################################
 
-#cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.6)
 set(PYTHON_EXECUTABLE "python2")
 
 ######################################################################################
 # Project declaration and options
 ######################################################################################
 
-#PROJECT(libfreenect)
+PROJECT(libfreenect)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules/")
 
