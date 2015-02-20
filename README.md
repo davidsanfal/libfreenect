@@ -1,11 +1,7 @@
 libfreenect
 ===========
-[![Github main](https://img.shields.io/badge/github-original-brightgreen.svg)](https://github.com/OpenKinect/libfreenect)
 
-[![Github fork](https://img.shields.io/badge/github-fork-brightgreen.svg)](https://github.com/davidsanfal/libfreenect)
-
-[![biicode block](https://img.shields.io/badge/biicode-published-brightgreen.svg)](https://www.biicode.com/search?q=libfreenect)
-
+[![Build Status](https://webapi.biicode.com/v1/badges/david/david/libfreenect/master)](https://www.biicode.com/david/libfreenect) 
 
 libfreenect is a userspace driver for the Microsoft Kinect.
 It runs on Linux, OSX, and Windows and supports
